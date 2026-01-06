@@ -4,25 +4,82 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LSK Football & LSK Yehya</title>
-  <script src="https://apis.google.com/js/platform.js"></script> <!-- YouTube Subscribe JS -->
+
   <style>
-    body { font-family: Arial, sans-serif; text-align: center; background:#f0f0f0; margin:0; padding:0; }
-    header { background:#222; color:white; padding:20px 0; }
-    nav a { color:white; margin:0 15px; text-decoration:none; font-weight:bold; }
-    nav a:hover { text-decoration:underline; }
-    .logos { margin: 20px 0; }
-    .logos img { width:150px; height:auto; margin:0 15px; }
-    .youtube-buttons { margin:20px 0; }
-    footer { background:#222; color:white; padding:15px 0; margin-top:30px; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      text-align: center;
+    }
+
+    header {
+      background: #111;
+      color: white;
+      padding: 20px 10px;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 12px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .logos {
+      margin: 30px 0;
+    }
+
+    .logos img {
+      width: 140px;
+      margin: 10px;
+    }
+
+    .subscribe-section {
+      margin: 30px 0;
+    }
+
+    .sub-btn {
+      display: inline-block;
+      margin: 12px;
+      padding: 15px 25px;
+      font-size: 16px;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 6px;
+    }
+
+    .football {
+      background: #ff0000;
+      color: white;
+    }
+
+    .yehya {
+      background: #ffcc00;
+      color: black;
+    }
+
+    footer {
+      background: #111;
+      color: white;
+      padding: 15px;
+      margin-top: 40px;
+      font-size: 14px;
+    }
   </style>
 </head>
+
 <body>
 
   <header>
-    <h1>Welcome to LSK Football & LSK Yehya</h1>
+    <h1>LSK Football & LSK Yehya</h1>
     <nav>
-      <a href="index.html">Home</a> |
-      <a href="free-clips.html">Free Clips</a> |
+      <a href="index.html">Home</a>
+      <a href="free-clips.html">Free Clips</a>
       <a href="contact.html">Contact</a>
     </nav>
   </header>
@@ -32,30 +89,26 @@
     <img src="lskyehya.png" alt="LSK Yehya Logo">
   </div>
 
-  <div class="youtube-buttons">
-    <h2>Subscribe to our channels!</h2>
+  <div class="subscribe-section">
+    <h2>Subscribe to our YouTube Channels</h2>
 
-    <!-- LSK Football Subscribe Button -->
-    <div style="margin:10px;">
-      <div class="g-ytsubscribe" 
-           data-channelid="https://youtube.com/@lsk_football?si=_sqAXGi7ZI4cF2qm" 
-           data-layout="default" 
-           data-count="default">
-      </div>
-    </div>
+    <!-- LSK Football Subscribe -->
+    <a class="sub-btn football"
+       href="https://www.youtube.com/@lsk_football?sub_confirmation=1"
+       target="_blank">
+       Subscribe to LSK Football
+    </a>
 
-    <!-- LSK Yehya Subscribe Button -->
-    <div style="margin:10px;">
-      <div class="g-ytsubscribe" 
-           data-channelid="https://youtube.com/@lskyehya?si=heTagvNVGiWkKNbR"
-           data-layout="default" 
-           data-count="default">
-      </div>
-    </div>
+    <!-- LSK Yehya Subscribe -->
+    <a class="sub-btn yehya"
+       href="https://www.youtube.com/@lskyehya?sub_confirmation=1"
+       target="_blank">
+       Subscribe to LSK Yehya
+    </a>
   </div>
 
   <footer>
-    <p>&copy; 2026 LSK Football & LSK Yehya. All rights reserved.</p>
+    © 2026 LSK Football & LSK Yehya. All rights reserved.
   </footer>
 
 </body>

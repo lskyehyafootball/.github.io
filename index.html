@@ -224,7 +224,7 @@ footer {
   <!-- CC to second email -->
   <input type="hidden" name="_cc" value="bestlsk69@gmail.com">
 
-  <input type="hidden" name="_template" value="table">
+  <input type="hidden" name="_next" value="thank-you.html">
 
   <button type="submit">Send Request</button>
 </form>
@@ -237,7 +237,14 @@ footer {
 <script>
 function go(url) { window.location.href = url; }
 </script>
-
+<script>
+  const form = document.querySelector("form");
+  form.addEventListener("submit", () => {
+    setTimeout(() => {
+      window.location.href = "thank-you.html";
+    }, 2000);
+  });
+</script>
 </body>
 </html>
 

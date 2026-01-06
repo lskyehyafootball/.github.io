@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LSK Football & LSK Yehya</title>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #000;
+  color: #eee;
+}
+
+/* Animations */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Header */
+header {
+  text-align: center;
+  padding: 30px 15px;
+  border-bottom: 1px solid #222;
+  animation: fadeUp 1s ease;
+}
+header h1 { margin: 0; font-size: 26px; }
+header p { color: #ccc; }
+
+/* Channel sections */
+.channel {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+  background: #0f0f0f;
+  border-radius: 12px;
+  animation: fadeUp 1s ease;
+}
+.channel img { width: 150px; }
+.channel-content { flex: 1; }
+.channel-content h2 { margin-top: 0; }
+.sub-btn {
+  display: inline-block;
+  padding: 12px 22px;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  margin-top: 10px;
+}
+.red { background: #ff0000; color: white; }
+.yellow { background: #ffcc00; color: black; }
+
+/* Services & Collaboration */
+.services {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  animation: fadeUp 1.2s ease;
+}
+.service-box {
+  flex: 1 1 260px;
+  background: #0f0f0f;
+  padding: 20px;
+  border-radius: 10px;
+}
+.service-box h3 { margin-top: 0; color: #ffcc00; }
+.service-box p { color: #ccc; }
+
+/* Form */
+.form-section {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #0f0f0f;
+  border-radius: 12px;
+  animation: fadeUp 1.4s ease;
+}
+.form-section h2 { text-align: center; }
+form input, form textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 6px;
+  border: none;
+  background: #222;
+  color: white;
+}
+form button {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: bold;
+  background: #ffcc00;
+  cursor: pointer;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #888;
+  border-top: 1px solid #222;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>LSK Football & LSK Yehya</h1>
+  <p>Football edits • Shorts • Free clips • Professional editing</p>
+</header>
+
+<!-- LSK FOOTBALL -->
+<div class="channel">
+  <img src="lskfootball.png" alt="LSK Football">
+  <div class="channel-content">
+    <h2>LSK Football</h2>
+    <p>
+      LSK Football focuses on high-energy football edits, Ronaldo moments,
+      match highlights, and viral short-form football content.
+    </p>
+    <button class="sub-btn red"
+      onclick="go('https://www.youtube.com/@lsk_football?sub_confirmation=1')">
+      Subscribe to LSK Football
+    </button>
+  </div>
+</div>
+
+<!-- LSK YEHYA -->
+<div class="channel">
+  <img src="lskyehya.png" alt="LSK Yehya">
+  <div class="channel-content">
+    <h2>LSK Yehya</h2>
+    <p>
+      LSK Yehya delivers smooth football edits, cinematic transitions,
+      aesthetic reels, and viral football shorts with clean editing style.
+    </p>
+    <button class="sub-btn yellow"
+      onclick="go('https://www.youtube.com/@lskyehya?sub_confirmation=1')">
+      Subscribe to LSK Yehya
+    </button>
+  </div>
+</div>
+
+<!-- Services / Free Clips / Collaboration -->
+<div class="services">
+  <div class="service-box">
+    <h3>🎬 Free Clips</h3>
+    <p>We provide high-quality football clips for reels, shorts, and edits — free to use.</p>
+  </div>
+
+  <div class="service-box">
+    <h3>🤝 Collaborations</h3>
+    <p>We work with creators for shoutouts, joint edits, and football projects.</p>
+  </div>
+
+  <div class="service-box">
+    <h3>✂️ Video Editing</h3>
+    <p>We provide professional football video edits, including:</p>
+    <ul style="text-align: left; margin-left: 20px; color: #ccc;">
+      <li>Goal highlights & match moments</li>
+      <li>Player-specific edits (Ronaldo, Messi, etc.)</li>
+      <li>Slow-motion & cinematic transitions</li>
+      <li>Shorts & Reels formatted for YouTube/Instagram/TikTok</li>
+      <li>Custom effects and hype edits</li>
+      <li>Subscriber & fan-requested edits</li>
+    </ul>
+    <p>We provide these at reasonable prices. Use the form below to request your custom edit!</p>
+  </div>
+</div>
+
+<!-- Request Edit Form -->
+<div class="form-section">
+  <h2>Request an Edit</h2>
+  <p>Fill the form below and tell us what kind of football edit you want.</p>
+
+  <form action="mailto:lskyehya777@gmail.com,bestlsk69@gmail.com"
+        method="POST"
+        enctype="text/plain">
+    <input type="text" name="Name" placeholder="Your Name" required>
+    <input type="email" name="Email" placeholder="Your Email" required>
+    <textarea name="Edit Request" rows="5"
+      placeholder="Describe the edit you want (player, style, duration, platform)"></textarea>
+    <button type="submit">Send Request</button>
+  </form>
+</div>
+
+<footer>
+  © 2026 LSK Football & LSK Yehya • Football Editing Experts
+</footer>
+
+<script>
+function go(url) { window.location.href = url; }
+</script>
+
+</body>
+</html>

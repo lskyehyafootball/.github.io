@@ -1,116 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LSK Football & LSK Yehya</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LSK Football & LSK Yehya</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f2f2f2;
-      text-align: center;
-    }
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  color: #222;
+  text-align: center;
+}
 
-    header {
-      background: #111;
-      color: white;
-      padding: 20px 10px;
-    }
+/* HEADER */
+header {
+  background: #222;
+  color: white;
+  padding: 20px;
+}
 
-    nav a {
-      color: white;
-      margin: 0 12px;
-      text-decoration: none;
-      font-weight: bold;
-    }
+header h1 {
+  margin: 0;
+  font-size: 24px;
+}
 
-    nav a:hover {
-      text-decoration: underline;
-    }
+nav {
+  margin-top: 10px;
+}
 
-    .logos {
-      margin: 30px 0;
-    }
+nav a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
 
-    .logos img {
-      width: 140px;
-      margin: 10px;
-    }
+/* LOGOS */
+.logos {
+  margin: 30px 0;
+}
 
-    .subscribe-section {
-      margin: 30px 0;
-    }
+.logos img {
+  width: 140px;
+  margin: 10px;
+}
 
-    .sub-btn {
-      display: inline-block;
-      margin: 12px;
-      padding: 15px 25px;
-      font-size: 16px;
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 6px;
-    }
+/* ABOUT */
+.about {
+  max-width: 600px;
+  margin: 0 auto 30px;
+  padding: 0 15px;
+  line-height: 1.6;
+}
 
-    .football {
-      background: #ff0000;
-      color: white;
-    }
+/* BUTTONS */
+.subscribe {
+  margin-bottom: 30px;
+}
 
-    .yehya {
-      background: #ffcc00;
-      color: black;
-    }
+.sub-btn {
+  width: 80%;
+  max-width: 300px;
+  padding: 14px;
+  margin: 10px auto;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
 
-    footer {
-      background: #111;
-      color: white;
-      padding: 15px;
-      margin-top: 40px;
-      font-size: 14px;
-    }
-  </style>
+.football {
+  background: #ff0000;
+  color: white;
+}
+
+.yehya {
+  background: #ffcc00;
+  color: black;
+}
+
+/* SECTIONS */
+.sections {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px;
+}
+
+.section {
+  background: white;
+  width: 260px;
+  margin: 10px;
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+footer {
+  background: #222;
+  color: white;
+  padding: 15px;
+  font-size: 14px;
+}
+</style>
 </head>
 
 <body>
 
-  <header>
-    <h1>LSK Football & LSK Yehya</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="free-clips.html">Free Clips</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
+<header>
+  <h1>LSK Football & LSK Yehya</h1>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Free Clips</a>
+    <a href="#">Contact</a>
+  </nav>
+</header>
 
-  <div class="logos">
-    <img src="lskfootball.png" alt="LSK Football Logo">
-    <img src="lskyehya.png" alt="LSK Yehya Logo">
+<div class="logos">
+  <img src="lskfootball.png" alt="LSK Football Logo">
+  <img src="lskyehya.png" alt="LSK Yehya Logo">
+</div>
+
+<div class="about">
+  <p>
+    LSK Football and LSK Yehya are football edit channels focused on
+    short-form football content, clean edits, and viral moments.
+    We also provide free clips and help creators with video editing.
+  </p>
+</div>
+
+<div class="subscribe">
+  <button class="sub-btn football"
+    onclick="go('https://www.youtube.com/@lsk_football?sub_confirmation=1')">
+    Subscribe to LSK Football
+  </button>
+
+  <button class="sub-btn yehya"
+    onclick="go('https://www.youtube.com/@lskyehya?sub_confirmation=1')">
+    Subscribe to LSK Yehya
+  </button>
+</div>
+
+<div class="sections">
+  <div class="section">
+    <h3>Free Clips</h3>
+    <p>High-quality football clips for shorts and edits.</p>
   </div>
 
-  <div class="subscribe-section">
-    <h2>Subscribe to our YouTube Channels</h2>
-
-    <!-- LSK Football Subscribe -->
-    <a class="sub-btn football"
-       href="https://www.youtube.com/@lsk_football?sub_confirmation=1"
-       target="_blank">
-       Subscribe to LSK Football
-    </a>
-
-    <!-- LSK Yehya Subscribe -->
-    <a class="sub-btn yehya"
-       href="https://www.youtube.com/@lskyehya?sub_confirmation=1"
-       target="_blank">
-       Subscribe to LSK Yehya
-    </a>
+  <div class="section">
+    <h3>Video Editing</h3>
+    <p>We can edit your football videos and shorts.</p>
   </div>
 
-  <footer>
-    © 2026 LSK Football & LSK Yehya. All rights reserved.
-  </footer>
+  <div class="section">
+    <h3>Collaborations</h3>
+    <p>Open for football creator collaborations.</p>
+  </div>
+</div>
+
+<footer>
+  © 2026 LSK Football & LSK Yehya
+</footer>
+
+<script>
+function go(url) {
+  window.location.href = url;
+}
+</script>
 
 </body>
 </html>
-

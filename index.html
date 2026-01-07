@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta name="google-adsense-account" content="ca-pub-7080903047441186">
+<meta name="google-site-verification" content="pyq7_3McuBCphIUtGdxanZfBpcIfoXq54fWiHwyS07Q" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LSKYehya & LSK Football - Football Edits & Free Clips</title>
+<title>LSK Yehya & LSK Football - Football Edits & Free Clips</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
 
 <style>
-/* GENERAL STYLING */
+/* General styling */
+* { box-sizing: border-box; }
 body {
   margin: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: Arial, sans-serif;
   background: #000;
   color: #eee;
 }
-* { box-sizing: border-box; }
 
-/* HERO SECTION */
+/* Hero Section */
 .hero {
   min-height: 70vh;
   display: flex;
@@ -24,67 +26,45 @@ body {
   justify-content: center;
   text-align: center;
   background: radial-gradient(circle at top, #111 0%, #000 70%);
-  padding: 20px;
 }
 .hero h1 {
+  font-family: 'Poppins', sans-serif;
   font-size: clamp(2.5rem, 6vw, 4.5rem);
   font-weight: 800;
   margin: 0;
-  background: linear-gradient(90deg, #ff7f00, #ffcc00);
+  background: linear-gradient(90deg, #ff0000, #ffcc00);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  opacity: 0;
-  transform: translateY(30px);
-  animation: fadeUp 1s ease forwards;
+  animation: heroFade 1.4s ease forwards;
 }
 .hero p {
   margin-top: 15px;
   font-size: 1.1rem;
   color: #bbb;
-  opacity: 0;
-  transform: translateY(30px);
-  animation: fadeUp 1.2s ease forwards;
+  animation: heroFade 1.8s ease forwards;
+}
+@keyframes heroFade {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-/* FADE UP ANIMATION */
-@keyframes fadeUp { from { opacity:0; transform:translateY(30px);} to {opacity:1; transform:translateY(0);} }
-
-/* ABOUT SECTION */
-.about-section {
-  max-width: 1000px;
-  margin: 40px auto;
-  padding: 30px;
-  background: #0f0f0f;
-  border-radius: 12px;
-  line-height: 1.8;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s ease;
-}
-.about-section.visible { opacity: 1; transform: translateY(0);}
-.about-section h2 { font-size: 2.2rem; color: #ffcc00; text-align: center; margin-bottom:15px;}
-.about-section h3 { font-size: 1.5rem; color: #ff7f00; margin:25px 0 10px 0; }
-.about-section ul { margin-left: 20px; }
-.about-section p { margin-bottom: 15px; }
-
-/* CHANNELS */
+/* Channel Section */
 .channel {
   max-width: 900px;
   margin: 40px auto;
   padding: 20px;
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: flex-start;
   gap: 20px;
   background: #0f0f0f;
   border-radius: 12px;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s ease;
+  animation: fadeUp 1s ease;
 }
-.channel.visible { opacity:1; transform: translateY(0);}
 .channel img { width: 150px; }
 .channel-content { flex: 1; }
+.channel-content h2 { margin-top: 0; font-size: 1.8rem; }
+.channel-content p { line-height: 1.5; }
 .sub-btn {
   display: inline-block;
   padding: 12px 22px;
@@ -94,13 +74,11 @@ body {
   border: none;
   margin-top: 10px;
   text-decoration: none;
-  color: #fff;
-  transition: all 0.3s ease;
 }
-.sub-btn.red { background: #ff7f00; }
-.sub-btn.red:hover { transform: scale(1.05); background: #ff4500; }
+.sub-btn.red { background: #ff4500; color: white; }
+.sub-btn.orange { background: #ff9900; color: white; }
 
-/* SERVICES */
+/* Services Section */
 .services {
   max-width: 900px;
   margin: 50px auto;
@@ -108,139 +86,125 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s ease;
+  animation: fadeUp 1.2s ease;
 }
-.services.visible { opacity:1; transform: translateY(0);}
 .service-box {
   flex: 1 1 260px;
   background: #0f0f0f;
   padding: 20px;
   border-radius: 10px;
-  transition: transform 0.3s ease, background 0.3s ease;
 }
-.service-box:hover { transform: scale(1.03); background: #111; }
 .service-box h3 { margin-top: 0; color: #ffcc00; }
-.service-box p { color: #ccc; }
+.service-box p, .service-box ul li { color: #ccc; }
 
-/* MODAL STYLING */
-.modal {
+/* Form Modal */
+#formModal, #thanksModal {
   display: none;
   position: fixed;
-  z-index: 999;
-  left:0; top:0;
-  width:100%; height:100%;
-  background: rgba(0,0,0,0.8);
+  top:0; left:0;
+  width: 100%; height:100%;
   justify-content: center;
   align-items: center;
+  background: rgba(0,0,0,0.8);
+  z-index: 1000;
 }
 .modal-content {
-  background: #fff;
+  background: white;
   padding: 30px;
-  border-radius: 12px;
-  color: #000;
-  width: 90%;
+  border-radius: 15px;
   max-width: 500px;
+  width: 90%;
+  color: #000;
   text-align: center;
   position: relative;
-  transform: scale(0.8);
-  opacity:0;
-  animation: scaleIn 0.4s forwards;
+  font-family: 'Poppins', sans-serif;
 }
-.modal-content h2 { margin-top: 0; color:#ff7f00; }
-.modal-content p { margin-bottom: 15px; }
-.modal-content input, .modal-content textarea { width:100%; padding:12px; margin:10px 0; border-radius:6px; border:1px solid #ccc;}
+.modal-content h2 { font-size: 1.8rem; margin-bottom: 15px; }
+.modal-content textarea, .modal-content input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
 .modal-content button {
-  padding:12px 25px; border:none; border-radius:30px; font-weight:bold; cursor:pointer; background:#ff7f00; color:#fff;
-  transition: all 0.3s ease;
+  padding: 14px 30px;
+  font-weight: bold;
+  font-size: 16px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  background: #ff4500;
+  color: white;
 }
-.modal-content button:hover { background:#ff4500; }
-.modal-content .close { position:absolute; top:10px; right:15px; font-size:22px; font-weight:bold; cursor:pointer; }
-
-/* THANK YOU MODAL */
-#thanksModal .modal-content h2 { color:#ff4500; font-size:2rem; font-weight:800; }
-#thanksModal .modal-content p { color:#333; }
-
-/* BACK TO TOP BUTTON */
-#backToTop {
-  position: fixed;
-  bottom: 25px;
-  right: 25px;
-  background: #ff7f00;
-  color:#fff;
-  padding:12px 18px;
-  border-radius:50px;
-  cursor:pointer;
-  display:none;
-  font-weight:bold;
-  z-index:1000;
-  transition: all 0.3s ease;
+.modal-close {
+  position: absolute;
+  top: 10px; right: 15px;
+  font-size: 20px;
+  cursor: pointer;
 }
-#backToTop:hover { background:#ff4500; }
 
-/* ANIMATIONS */
-@keyframes scaleIn { from {transform: scale(0.8); opacity:0;} to {transform: scale(1); opacity:1;} }
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #888;
+  border-top: 1px solid #222;
+}
+
+/* Animations */
+@keyframes fadeUp { from { opacity:0; transform:translateY(30px);} to {opacity:1; transform:translateY(0);} }
 </style>
 </head>
 
 <body>
+<header>
+  <h1>LSK Football & LSK Yehya</h1>
+  <p>Football edits • Shorts • Free clips • Professional editing</p>
+</header>
 
-<!-- HERO -->
 <section class="hero">
   <div>
-    <h1>Welcome to Our Website</h1>
-    <p>We are LSKYehya and Imtinan, the creators behind LSKYehya and LSK Football. Our mission is to bring you free 4K clips, football edits, and collaboration opportunities for creators.</p>
+    <h1>Welcome to Our Website!</h1>
+    <p>We are Yehya and Imtinan, the creators behind LSKYeHya and LSK Football. Our mission is to bring you the best 4K clips from your favorite moments – completely free! Whether it’s epic goals, viral highlights, or unforgettable plays, we make sure you never miss a moment.<br><br>
+    But that’s not all! We also help content creators grow their channels by providing high-quality edits, clips, and custom content at affordable prices. Our goal is to make collaboration easy and fun, whether you’re a YouTuber, TikToker, or social media enthusiast.<br><br>
+    By working with us, you get:<br>
+    • Free 4K clips for your projects<br>
+    • Professional video edits tailored to your style<br>
+    • Support and collaboration opportunities to help your channel grow<br>
+    • Quick and easy access to content that makes your videos stand out<br>
+    We believe in quality, creativity, and community. If you want to take your content to the next level, you’re in the right place. Join us, collaborate, and let’s make amazing videos together!
+    </p>
   </div>
 </section>
 
-<!-- ABOUT SECTION -->
-<section class="about-section">
-  <h2>About Us</h2>
-  <p>
-We are LSKYehya and Imtinan, the creators behind LSKYehya and LSK Football, two passionate content creators who live and breathe football, YouTube, and viral video content. This website is our hub to share, create, and collaborate, bringing you the highest quality 4K clips, football edits, and creative content designed to help creators and fans alike.
-  </p>
-  <p>
-Our mission is simple: provide free, high-quality 4K clips, offer professional video edits at reasonable prices, and build a community where creators can collaborate and grow together. Whether you are a football fan, a YouTuber looking for epic highlights, or a content creator in need of professional edits, you’ve come to the right place.
-  </p>
-  <h3>Here’s what we offer:</h3>
-  <ul>
-    <li><strong>Free 4K Clips:</strong> Get access to the latest viral moments, epic football highlights, and trending content, ready to use for your videos. All our clips are carefully selected to ensure the best quality for your projects.</li>
-    <li><strong>Professional Editing Services:</strong> We provide custom video edits at affordable prices, with a special focus on football edits, especially Ronaldo! From stunning goals to insane skills, we make sure your edits look professional and stand out, whether for YouTube, TikTok, Instagram, or any social media platform.</li>
-    <li><strong>Collaborations and Partnerships:</strong> We love working with other creators and influencers. By collaborating with us, you can grow your channel, reach a bigger audience, and create high-quality content together. We believe in building mutually beneficial partnerships where everyone succeeds.</li>
-    <li><strong>Creator Support:</strong> We are more than just a website – we are a supportive community for creators. If you need guidance, editing help, or content ideas, we are here to help you take your videos to the next level.</li>
-  </ul>
-  <p>
-At LSKYehya & LSK Football, we value creativity, quality, and accessibility. We believe everyone should have access to amazing content and professional edits without spending a fortune. That’s why we provide free clips and affordable editing services, making it easy for creators of all sizes to shine online.
-  </p>
-  <p>
-So, whether you’re here to download free 4K clips, get custom football edits (especially Ronaldo edits!), or collaborate with us on exciting projects, you’ve found the perfect place. Join our community today, explore our content, and let’s create amazing videos together.
-  </p>
-  <p>
-Your journey to better content, epic football edits, and creative growth starts here. Welcome to the family!
-  </p>
-</section>
-
-<!-- CHANNELS -->
+<!-- LSK FOOTBALL -->
 <div class="channel">
   <img src="lskfootball.png" alt="LSK Football">
   <div class="channel-content">
     <h2>LSK Football</h2>
-    <p>High-energy football edits, Ronaldo moments, match highlights, viral content.</p>
-    <button class="sub-btn red" onclick="window.open('https://www.youtube.com/@lsk_football','_blank')">▶ YouTube</button>
+    <p>LSK Football is your ultimate destination for high-energy football edits, Ronaldo moments, match highlights, and viral short-form football content. We provide cinematic edits, goal compilations, hype videos, and trending clips suitable for YouTube, TikTok, Instagram, and more.</p>
+    <p>Our mission: provide free 4K clips, professional edits at affordable prices, and collaboration opportunities to help creators grow. Work with us to get the best content for your projects and share your passion for football with the world.</p>
+    <a class="sub-btn red" href="https://www.youtube.com/@lsk_football" target="_blank">▶ YouTube</a>
+    <p style="font-size:13px;color:#aaa;">After subscribing on YouTube, return here for free clips 🎬</p>
+    <a class="sub-btn orange" onclick="openForm()">Request an Edit</a>
   </div>
 </div>
 
+<!-- LSK YEHYA -->
 <div class="channel">
-  <img src="lskyehya.png" alt="LSKYehya">
+  <img src="lskyehya.png" alt="LSK Yehya">
   <div class="channel-content">
-    <h2>LSKYehya</h2>
-    <p>Smooth football edits, cinematic transitions, aesthetic reels, viral shorts.</p>
-    <button class="sub-btn red" onclick="window.open('https://www.youtube.com/@lskyehya','_blank')">▶ YouTube</button>
+    <h2>LSK Yehya</h2>
+    <p>LSK Yehya delivers smooth football edits, cinematic transitions, aesthetic reels, and viral football shorts with clean editing style. From Ronaldo strikes to skillful passes, our content is designed to entertain and inspire football fans and content creators alike.</p>
+    <p>We provide free 4K clips, custom edits at affordable prices, and collaborate with creators to help them grow. Our goal is to make professional football content accessible, creative, and engaging for everyone.</p>
+    <a class="sub-btn red" href="https://www.youtube.com/@lskyehya" target="_blank">▶ YouTube</a>
+    <p style="font-size:13px;color:#aaa;">After subscribing on YouTube, return here for free clips 🎬</p>
+    <a class="sub-btn orange" onclick="openForm()">Request an Edit</a>
   </div>
 </div>
 
-<!-- SERVICES -->
+<!-- Services Section -->
 <div class="services">
   <div class="service-box">
     <h3>🎬 Free Clips</h3>
@@ -248,70 +212,75 @@ Your journey to better content, epic football edits, and creative growth starts 
   </div>
   <div class="service-box">
     <h3>🤝 Collaborations</h3>
-    <p>Shoutouts, joint edits, and football projects with creators.</p>
+    <p>We work with creators for shoutouts, joint edits, and football projects.</p>
   </div>
   <div class="service-box">
     <h3>✂️ Video Editing</h3>
-    <p>Professional football edits, custom effects, slow-motion, cinematic transitions, and subscriber requests.</p>
-    <button class="sub-btn red" onclick="openForm()">Request an Edit</button>
+    <ul>
+      <li>Goal highlights & match moments</li>
+      <li>Player-specific edits (Ronaldo, Messi, etc.)</li>
+      <li>Slow-motion & cinematic transitions</li>
+      <li>Shorts & Reels for social media</li>
+      <li>Custom effects and hype edits</li>
+      <li>Subscriber & fan-requested edits</li>
+    </ul>
+    <a class="sub-btn orange" onclick="openForm()">Request an Edit</a>
   </div>
 </div>
 
-<!-- FORM MODAL -->
-<div id="formModal" class="modal">
+<!-- Form Modal -->
+<div id="formModal">
   <div class="modal-content">
-    <span class="close" onclick="closeForm()">&times;</span>
+    <span class="modal-close" onclick="document.getElementById('formModal').style.display='none'">&times;</span>
     <h2>Request an Edit</h2>
     <p>Fill the form below and tell us what kind of football edit you want.</p>
-    <input type="text" placeholder="Your Name" required>
-    <input type="email" placeholder="Your Email" required>
-    <textarea placeholder="Describe the edit you want (player, style, duration, platform)" rows="5" required></textarea>
-    <button onclick="submitForm()">Submit Request</button>
+    <form id="requestForm" action="https://formsubmit.co/lskyehya777@gmail.com" method="POST" onsubmit="submitForm(event)">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="5" placeholder="Describe the edit you want (player, style, duration, platform)" required></textarea>
+      <input type="hidden" name="_cc" value="bestlsk69@gmail.com">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <button type="submit">Submit Request</button>
+    </form>
   </div>
 </div>
 
-<!-- THANK YOU MODAL -->
-<div id="thanksModal" class="modal">
+<!-- Thank You Modal -->
+<div id="thanksModal">
   <div class="modal-content">
-    <span class="close" onclick="closeThanks()">&times;</span>
+    <span class="modal-close" onclick="closeThanks()">&times;</span>
     <h2>Thank You!</h2>
-    <p>Your request has been submitted successfully. We'll get back to you soon.</p>
+    <p style="font-size:1.2rem; font-weight:bold; color:#ff4500;">Your request has been submitted successfully! We will get back to you soon.</p>
   </div>
 </div>
-
-<!-- BACK TO TOP -->
-<div id="backToTop" onclick="window.scrollTo({top:0, behavior:'smooth'})">↑ Top</div>
 
 <footer>
-  © 2026 LSKYehya & LSK Football • Football Editing Experts
+  © 2026 LSK Football & LSK Yehya • Football Editing Experts
 </footer>
 
 <script>
-// MODAL FUNCTIONS
-function openForm(){document.getElementById("formModal").style.display="flex";}
-function closeForm(){document.getElementById("formModal").style.display="none";}
-function submitForm(){closeForm();document.getElementById("thanksModal").style.display="flex";}
-function closeThanks(){document.getElementById("thanksModal").style.display="none";}
+function openForm() {
+  document.getElementById("formModal").style.display = "flex";
+}
+function closeThanks() {
+  document.getElementById("thanksModal").style.display = "none";
+}
 
-// SHOW BACK TO TOP BUTTON
-window.addEventListener('scroll', function(){
-  const btn = document.getElementById('backToTop');
-  if(window.scrollY > 300) btn.style.display = 'block';
-  else btn.style.display = 'none';
-});
-
-// SCROLL ANIMATIONS
-const observer = new IntersectionObserver((entries)=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      entry.target.classList.add('visible');
-    }
-  });
-},{threshold:0.2});
-
-document.querySelectorAll('.about-section, .channel, .services').forEach(el=>{
-  observer.observe(el);
-});
+// Handle form submission without opening Formsubmit page
+function submitForm(e){
+  e.preventDefault();
+  const form = document.getElementById('requestForm');
+  fetch(form.action, {
+    method: 'POST',
+    body: new FormData(form),
+    headers: { 'Accept': 'application/json' }
+  }).then(() => {
+    document.getElementById("formModal").style.display = "none";
+    document.getElementById("thanksModal").style.display = "flex";
+    form.reset();
+  }).catch(err => alert('Error submitting form: '+err));
+}
 </script>
 </body>
 </html>

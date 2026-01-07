@@ -33,20 +33,21 @@ body {
   background: linear-gradient(90deg, #ff7f00, #ffcc00);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: fadeUp 1.2s ease forwards;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 1s ease forwards;
 }
 .hero p {
   margin-top: 15px;
   font-size: 1.1rem;
   color: #bbb;
-  animation: fadeUp 1.4s ease forwards;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 1.2s ease forwards;
 }
 
 /* FADE UP ANIMATION */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(30px);}
-  to { opacity: 1; transform: translateY(0);}
-}
+@keyframes fadeUp { from { opacity:0; transform:translateY(30px);} to {opacity:1; transform:translateY(0);} }
 
 /* ABOUT SECTION */
 .about-section {
@@ -56,24 +57,14 @@ body {
   background: #0f0f0f;
   border-radius: 12px;
   line-height: 1.8;
-  animation: fadeUp 1s ease;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
 }
-.about-section h2 {
-  font-size: 2.2rem;
-  color: #ffcc00;
-  margin-bottom: 15px;
-  text-align: center;
-}
-.about-section h3 {
-  font-size: 1.5rem;
-  color: #ff7f00;
-  margin-top: 25px;
-  margin-bottom: 10px;
-}
-.about-section ul {
-  margin-left: 20px;
-  list-style: disc;
-}
+.about-section.visible { opacity: 1; transform: translateY(0);}
+.about-section h2 { font-size: 2.2rem; color: #ffcc00; text-align: center; margin-bottom:15px;}
+.about-section h3 { font-size: 1.5rem; color: #ff7f00; margin:25px 0 10px 0; }
+.about-section ul { margin-left: 20px; }
 .about-section p { margin-bottom: 15px; }
 
 /* CHANNELS */
@@ -87,11 +78,13 @@ body {
   gap: 20px;
   background: #0f0f0f;
   border-radius: 12px;
-  animation: fadeUp 1s ease;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
 }
+.channel.visible { opacity:1; transform: translateY(0);}
 .channel img { width: 150px; }
 .channel-content { flex: 1; }
-.channel-content h2 { margin-top: 0; }
 .sub-btn {
   display: inline-block;
   padding: 12px 22px;
@@ -115,14 +108,19 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  animation: fadeUp 1.2s ease;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
 }
+.services.visible { opacity:1; transform: translateY(0);}
 .service-box {
   flex: 1 1 260px;
   background: #0f0f0f;
   padding: 20px;
   border-radius: 10px;
+  transition: transform 0.3s ease, background 0.3s ease;
 }
+.service-box:hover { transform: scale(1.03); background: #111; }
 .service-box h3 { margin-top: 0; color: #ffcc00; }
 .service-box p { color: #ccc; }
 
@@ -131,12 +129,11 @@ body {
   display: none;
   position: fixed;
   z-index: 999;
-  left: 0; top: 0;
-  width: 100%; height: 100%;
+  left:0; top:0;
+  width:100%; height:100%;
   background: rgba(0,0,0,0.8);
   justify-content: center;
   align-items: center;
-  animation: fadeIn 0.4s ease forwards;
 }
 .modal-content {
   background: #fff;
@@ -148,50 +145,42 @@ body {
   text-align: center;
   position: relative;
   transform: scale(0.8);
-  opacity: 0;
+  opacity:0;
   animation: scaleIn 0.4s forwards;
 }
-.modal-content h2 { margin-top: 0; }
+.modal-content h2 { margin-top: 0; color:#ff7f00; }
 .modal-content p { margin-bottom: 15px; }
-.modal-content input, .modal-content textarea {
-  width: 100%;
-  padding: 12px;
-  margin: 10px 0;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-}
+.modal-content input, .modal-content textarea { width:100%; padding:12px; margin:10px 0; border-radius:6px; border:1px solid #ccc;}
 .modal-content button {
-  padding: 12px 25px;
-  border: none;
-  border-radius: 30px;
-  font-weight: bold;
-  cursor: pointer;
-  background: #ff7f00;
-  color: #fff;
-  margin-top: 10px;
+  padding:12px 25px; border:none; border-radius:30px; font-weight:bold; cursor:pointer; background:#ff7f00; color:#fff;
   transition: all 0.3s ease;
 }
-.modal-content button:hover { background: #ff4500; }
-.modal-content .close {
-  position: absolute;
-  top: 10px; right: 15px;
-  font-size: 22px;
-  font-weight: bold;
-  cursor: pointer;
-}
+.modal-content button:hover { background:#ff4500; }
+.modal-content .close { position:absolute; top:10px; right:15px; font-size:22px; font-weight:bold; cursor:pointer; }
 
 /* THANK YOU MODAL */
-#thanksModal .modal-content h2 {
-  color: #ff4500;
-  font-size: 2rem;
-  font-weight: 800;
+#thanksModal .modal-content h2 { color:#ff4500; font-size:2rem; font-weight:800; }
+#thanksModal .modal-content p { color:#333; }
+
+/* BACK TO TOP BUTTON */
+#backToTop {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: #ff7f00;
+  color:#fff;
+  padding:12px 18px;
+  border-radius:50px;
+  cursor:pointer;
+  display:none;
+  font-weight:bold;
+  z-index:1000;
+  transition: all 0.3s ease;
 }
-#thanksModal .modal-content p { color: #333; }
+#backToTop:hover { background:#ff4500; }
 
 /* ANIMATIONS */
-@keyframes fadeIn { from {opacity: 0;} to {opacity:1;} }
 @keyframes scaleIn { from {transform: scale(0.8); opacity:0;} to {transform: scale(1); opacity:1;} }
-
 </style>
 </head>
 
@@ -238,7 +227,7 @@ Your journey to better content, epic football edits, and creative growth starts 
   <div class="channel-content">
     <h2>LSK Football</h2>
     <p>High-energy football edits, Ronaldo moments, match highlights, viral content.</p>
-    <button class="sub-btn red" onclick="window.open('https://www.youtube.com/@lsk_football', '_blank')">▶ YouTube</button>
+    <button class="sub-btn red" onclick="window.open('https://www.youtube.com/@lsk_football','_blank')">▶ YouTube</button>
   </div>
 </div>
 
@@ -247,7 +236,7 @@ Your journey to better content, epic football edits, and creative growth starts 
   <div class="channel-content">
     <h2>LSKYehya</h2>
     <p>Smooth football edits, cinematic transitions, aesthetic reels, viral shorts.</p>
-    <button class="sub-btn red" onclick="window.open('https://www.youtube.com/@lskyehya', '_blank')">▶ YouTube</button>
+    <button class="sub-btn red" onclick="window.open('https://www.youtube.com/@lskyehya','_blank')">▶ YouTube</button>
   </div>
 </div>
 
@@ -268,7 +257,7 @@ Your journey to better content, epic football edits, and creative growth starts 
   </div>
 </div>
 
-<!-- MODAL FORM -->
+<!-- FORM MODAL -->
 <div id="formModal" class="modal">
   <div class="modal-content">
     <span class="close" onclick="closeForm()">&times;</span>
@@ -290,16 +279,39 @@ Your journey to better content, epic football edits, and creative growth starts 
   </div>
 </div>
 
+<!-- BACK TO TOP -->
+<div id="backToTop" onclick="window.scrollTo({top:0, behavior:'smooth'})">↑ Top</div>
+
 <footer>
   © 2026 LSKYehya & LSK Football • Football Editing Experts
 </footer>
 
 <script>
+// MODAL FUNCTIONS
 function openForm(){document.getElementById("formModal").style.display="flex";}
 function closeForm(){document.getElementById("formModal").style.display="none";}
 function submitForm(){closeForm();document.getElementById("thanksModal").style.display="flex";}
 function closeThanks(){document.getElementById("thanksModal").style.display="none";}
-</script>
 
+// SHOW BACK TO TOP BUTTON
+window.addEventListener('scroll', function(){
+  const btn = document.getElementById('backToTop');
+  if(window.scrollY > 300) btn.style.display = 'block';
+  else btn.style.display = 'none';
+});
+
+// SCROLL ANIMATIONS
+const observer = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
+    }
+  });
+},{threshold:0.2});
+
+document.querySelectorAll('.about-section, .channel, .services').forEach(el=>{
+  observer.observe(el);
+});
+</script>
 </body>
 </html>

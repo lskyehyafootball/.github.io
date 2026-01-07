@@ -3,178 +3,138 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LSK Football & LSK Yehya</title>
-<meta name="description" content="LSK Yehya and LSK Football provide football edits, free clips, and collaboration services for football fans.">
-<meta name="keywords" content="LSK Yehya, LSK Football, football edits, free clips, video editing">
-<meta name="robots" content="index, follow">
-
+<title>LSK Football & LSK Yehya - Football Edits & Free Clips</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
 
 <style>
-/* MODAL BACKGROUND & FORM */
-.modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: none; /* hidden initially */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #000;
+  color: #eee;
+}
+
+/* Hero Section */
+.hero {
+  min-height: 70vh;
+  display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(0,0,0,0.7); /* dark transparent overlay */
-  z-index: 9999;
-}
-
-.modal-content {
-  background: #fff; /* form box white */
-  padding: 30px;
-  border-radius: 12px;
-  max-width: 500px;
-  width: 90%;
   text-align: center;
-  transform: scale(0.7);
-  opacity: 0;
-  transition: all 0.3s ease;
-  font-family: Arial, sans-serif;
-}
-
-/* SHOW MODAL ANIMATION */
-.modal.show .modal-content {
-  transform: scale(1);
-  opacity: 1;
-}
-
-/* Modal headings */
-.modal h2 {
-  margin-top: 0;
-  color: #000; /* black heading for Request an Edit */
-  font-size: 24px;
-}
-
-/* Inputs & textarea */
-.modal input, .modal textarea {
-  width: 100%;
-  padding: 12px;
-  margin: 10px 0;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-}
-
-/* Submit button */
-.modal button {
-  width: 100%;
-  padding: 14px;
-  border: none;
-  border-radius: 30px;
-  font-size: 16px;
-  font-weight: bold;
-  background: #ff0000; /* submit request button color */
-  color: white;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.modal button:hover {
-  background: #cc0000;
-}
-
-/* THANK YOU MODAL */
-#thanksModal .modal-content {
-  background: #fff;
-  color: #000;
-  font-size: 18px;
-  position: relative;
-  overflow: hidden;
-  border-radius: 12px;
-  padding: 30px;
-  font-weight: bold;
-  text-align: center;
-}
-
-/* GOLD SPARKLE ANIMATION */
-#thanksModal h2 {
-  font-size: 28px;
-  color: #ffcc00;
-  animation: sparkle 1s infinite alternate;
-}
-
-@keyframes sparkle {
-  0% { text-shadow: 0 0 5px #ffcc00, 0 0 10px #ffcc00; }
-  50% { text-shadow: 0 0 15px #ffdd55,
-/* GENERAL STYLES */
-body {
-  margin:0; font-family: Arial, sans-serif; background:#000; color:#eee;
-}
-* { box-sizing: border-box; }
-h1,h2,h3,h4,h5,h6 { margin:0; }
-
-/* HERO SECTION */
-.hero {
-  min-height: 70vh; display:flex; align-items:center; justify-content:center; text-align:center;
   background: radial-gradient(circle at top, #111 0%, #000 70%);
 }
 .hero h1 {
   font-family: 'Poppins', sans-serif;
-  font-size: clamp(2.5rem,6vw,4.5rem);
-  font-weight:800;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 800;
+  margin: 0;
   background: linear-gradient(90deg, #ff0000, #ffcc00);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: heroFade 1.4s ease forwards;
 }
-.hero p { margin-top:15px; font-size:1.2rem; color:#bbb; animation: heroFade 1.8s ease forwards; }
-@keyframes heroFade { from {opacity:0; transform:translateY(30px);} to {opacity:1; transform:translateY(0);} }
+.hero p {
+  margin-top: 15px;
+  font-size: 1.2rem;
+  color: #bbb;
+  animation: heroFade 1.8s ease forwards;
+}
+@keyframes heroFade {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
-/* HEADER */
-header { text-align:center; padding:20px 15px; border-bottom:1px solid #222; }
-header h1 { font-size:26px; }
+/* Header */
+header {
+  text-align: center;
+  padding: 30px 15px;
+  border-bottom: 1px solid #222;
+}
+header h1 { margin:0; font-size:26px; }
 header p { color:#ccc; }
 
-/* CHANNELS */
-.channel { max-width:900px; margin:40px auto; padding:20px; display:flex; flex-wrap:wrap; align-items:center; gap:20px; background:#0f0f0f; border-radius:12px; }
-.channel img { width:150px; }
+/* Channel sections */
+.channel {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+  background: #0f0f0f;
+  border-radius: 12px;
+}
+.channel img { width: 150px; }
 .channel-content { flex:1; }
-.sub-btn { display:inline-block; padding:12px 22px; border-radius:30px; font-weight:bold; cursor:pointer; border:none; margin-top:10px; text-decoration:none; }
-.red { background:#ff0000; color:white; }
-.red:hover { transform:scale(1.05); }
-
-/* SERVICES */
-.services { max-width:900px; margin:50px auto; padding:20px; display:flex; flex-wrap:wrap; gap:20px; }
-.service-box { flex:1 1 260px; background:#0f0f0f; padding:20px; border-radius:10px; }
-.service-box h3 { color:#ffcc00; }
-.service-box p, .service-box li { color:#ccc; }
-
-/* MODALS */
-#formModal, #thanksModal {
-  display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85);
-  justify-content:center; align-items:center; z-index:1000;
-}
-.modal-content {
-  background:#111; padding:30px; border-radius:12px; max-width:500px; width:90%; text-align:center;
-}
-.modal-content h2 { color:#ffcc00; margin-bottom:15px; }
-.modal-content p { color:#ccc; margin-bottom:15px; }
-.modal-content input, .modal-content textarea { width:100%; padding:12px; margin:10px 0; border-radius:6px; border:none; background:#222; color:white; }
-.modal-content button { width:100%; padding:14px; border:none; border-radius:30px; font-size:16px; font-weight:bold; background:#ffcc00; cursor:pointer; }
-.close-btn { position:absolute; top:15px; right:20px; font-size:25px; cursor:pointer; color:#ffcc00; }
-
-/* FOOTER */
-footer { text-align:center; padding:20px; color:#888; border-top:1px solid #222; }
-/* MODAL ANIMATIONS */
-.modal-content {
-  transform: scale(0.7);
-  opacity: 0;
-  transition: all 0.3s ease;
+.channel-content h2 { margin-top:0; }
+.sub-btn {
+  display: inline-block;
+  padding: 12px 22px;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  border:none;
+  margin-top:10px;
 }
 
-#formModal.show .modal-content,
-#thanksModal.show .modal-content {
-  transform: scale(1);
-  opacity: 1;
+/* Services & Collaboration */
+.services {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.service-box {
+  flex:1 1 260px;
+  background:#0f0f0f;
+  padding:20px;
+  border-radius:10px;
+}
+.service-box h3 { margin-top:0; color:#ffcc00; }
+.service-box p { color:#ccc; }
+.service-box ul { color:#ccc; margin-left:20px; }
+
+/* Modal form */
+.modal, .thanks-modal {
+  display:none;
+  position:fixed;
+  top:0; left:0;
+  width:100%; height:100%;
+  background: rgba(0,0,0,0.8);
+  justify-content:center;
+  align-items:center;
+  z-index:1000;
+}
+.modal-content, .thanks-content {
+  background:#fff;
+  padding:30px;
+  border-radius:15px;
+  width:90%;
+  max-width:500px;
+  color:#000;
+  text-align:center;
+}
+.modal-content h2, .thanks-content h2 { margin-top:0; font-family:'Poppins',sans-serif; color:#000; }
+.modal-content input, .modal-content textarea {
+  width:100%; padding:12px; margin:10px 0; border-radius:6px; border:1px solid #ccc;
+}
+.modal-content button {
+  padding:14px; width:100%; border:none; border-radius:30px; background:#ff0000; color:#fff; font-weight:bold; cursor:pointer;
+  margin-top:10px;
+}
+
+/* Footer */
+footer {
+  text-align:center;
+  padding:20px;
+  color:#888;
+  border-top:1px solid #222;
 }
 </style>
 </head>
-
 <body>
 
 <header>
@@ -189,40 +149,42 @@ footer { text-align:center; padding:20px; color:#888; border-top:1px solid #222;
   </div>
 </section>
 
-<!-- LSK FOOTBALL -->
+<!-- Channels -->
 <div class="channel">
   <img src="lskfootball.png" alt="LSK Football">
   <div class="channel-content">
     <h2>LSK Football</h2>
-    <p>High-energy football edits, Ronaldo moments, match highlights, viral short-form content.</p>
-    <a href="https://www.youtube.com/@lsk_football" target="_blank" class="sub-btn red">▶ YouTube</a>
+    <p>High-energy football edits, Ronaldo moments, match highlights, viral shorts.</p>
+    <a href="https://www.youtube.com/@lsk_football" target="_blank" class="sub-btn red" style="text-decoration:none;">▶ YouTube</a>
     <p style="font-size:13px;color:#aaa;">After subscribing on YouTube, return here for free clips 🎬</p>
   </div>
 </div>
 
-<!-- LSK YEHYA -->
 <div class="channel">
   <img src="lskyehya.png" alt="LSK Yehya">
   <div class="channel-content">
     <h2>LSK Yehya</h2>
-    <p>Smooth football edits, cinematic transitions, aesthetic reels, and viral football shorts.</p>
-    <a href="https://www.youtube.com/@lskyehya" target="_blank" class="sub-btn red">▶ YouTube</a>
+    <p>Smooth football edits, cinematic transitions, aesthetic reels, viral shorts.</p>
+    <a href="https://www.youtube.com/@lskyehya" target="_blank" class="sub-btn red" style="text-decoration:none;">▶ YouTube</a>
     <p style="font-size:13px;color:#aaa;">After subscribing on YouTube, return here for free clips 🎬</p>
   </div>
 </div>
 
-<!-- SERVICES / EDITS -->
+<!-- Services -->
 <div class="services">
   <div class="service-box">
     <h3>🎬 Free Clips</h3>
     <p>High-quality football clips for reels, shorts, and edits — free to use.</p>
   </div>
+
   <div class="service-box">
     <h3>🤝 Collaborations</h3>
     <p>Shoutouts, joint edits, and football projects with creators.</p>
   </div>
+
   <div class="service-box">
     <h3>✂️ Video Editing</h3>
+    <p>Professional football video edits including:</p>
     <ul>
       <li>Goal highlights & match moments</li>
       <li>Player-specific edits (Ronaldo, Messi, etc.)</li>
@@ -231,143 +193,54 @@ footer { text-align:center; padding:20px; color:#888; border-top:1px solid #222;
       <li>Custom effects and hype edits</li>
       <li>Subscriber & fan-requested edits</li>
     </ul>
-    <button class="sub-btn red" onclick="openForm()">Request an Edit</button>
+    <button onclick="openForm()" class="sub-btn" style="background:#000; color:#fff;">Request an Edit</button>
   </div>
 </div>
 
-<!-- FORM MODAL -->
-<div id="formModal">
+<!-- Modal Form -->
+<div id="formModal" class="modal">
   <div class="modal-content">
-    <span class="close-btn" onclick="closeForm()">&times;</span>
     <h2>Request an Edit</h2>
     <p>Fill the form below and tell us what kind of football edit you want.</p>
-    <form id="popupForm">
+    <form action="https://formsubmit.co/lskyehya777@gmail.com" method="POST">
       <input type="text" name="name" placeholder="Your Name" required>
       <input type="email" name="email" placeholder="Your Email" required>
       <textarea name="message" rows="5" placeholder="Describe the edit you want (player, style, duration, platform)" required></textarea>
       <input type="hidden" name="_cc" value="bestlsk69@gmail.com">
+      <input type="hidden" name="_next" value="https://lskyehyafootball.github.io/thank-you.html">
       <input type="hidden" name="_template" value="table">
       <input type="hidden" name="_captcha" value="false">
-      <button type="submit">Submit Request</button>
+      <button type="submit" onclick="showThanks()">Submit Request</button>
     </form>
   </div>
 </div>
 
-<!-- THANK YOU MODAL -->
-<div id="thanksModal">
-  <div class="modal-content">
-    <span class="close-btn" onclick="closeThanks()">&times;</span>
+<!-- Thank You Modal -->
+<div id="thanksModal" class="thanks-modal">
+  <div class="thanks-content">
     <h2>Thank You!</h2>
-    <p>Your request has been sent successfully. We will get back to you soon.</p>
+    <p>Your request has been submitted successfully.<br>We will get back to you soon!</p>
+    <button onclick="closeThanks()" style="padding:10px 20px; border:none; border-radius:20px; background:#ff0000; color:#fff; cursor:pointer;">Close</button>
   </div>
 </div>
 
 <footer>
   © 2026 LSK Football & LSK Yehya • Football Editing Experts
-</footer> 
-<script>
+</footer>
+
 <script>
 function openForm() {
-  const modal = document.getElementById("formModal");
-  modal.style.display = "flex";
-  modal.classList.add("show");
-}
-
-function closeForm() {
-  const modal = document.getElementById("formModal");
-  modal.classList.remove("show");
-  setTimeout(() => { modal.style.display = "none"; }, 300);
+  document.getElementById("formModal").style.display = "flex";
 }
 
 function showThanks() {
-  const thanksModal = document.getElementById("thanksModal");
-  thanksModal.style.display = "flex";
-  thanksModal.classList.add("show");
+  document.getElementById("formModal").style.display = "none";
+  document.getElementById("thanksModal").style.display = "flex";
 }
 
 function closeThanks() {
-  const thanksModal = document.getElementById("thanksModal");
-  thanksModal.classList.remove("show");
-  setTimeout(() => { thanksModal.style.display = "none"; }, 300);
+  document.getElementById("thanksModal").style.display = "none";
 }
-
-/* FORM SUBMISSION */
-document.getElementById("popupForm").addEventListener("submit", function(e){
-  e.preventDefault(); // prevent page reload
-  const form = e.target;
-  fetch("https://formsubmit.co/lskyehya777@gmail.com", {
-    method: "POST",
-    body: new FormData(form)
-  }).then(response => {
-    if(response.ok){
-      form.reset();
-      closeForm();
-      showThanks();
-    } else {
-      alert("Error submitting form. Please try again.");
-    }
-  }).catch(() => { alert("Error submitting form. Please try again."); });
-});
-</script>
-function openForm() {
-  const modal = document.getElementById("formModal");
-  modal.style.display = "flex";
-  modal.classList.add("show");
-}
-
-function closeForm() {
-  const modal = document.getElementById("formModal");
-  modal.classList.remove("show");
-  setTimeout(() => { modal.style.display = "none"; }, 300); // wait for animation
-}
-
-function showThanks() {
-  const thanksModal = document.getElementById("thanksModal");
-  thanksModal.style.display = "flex";
-  thanksModal.classList.add("show");
-}
-
-function closeThanks() {
-  const thanksModal = document.getElementById("thanksModal");
-  thanksModal.classList.remove("show");
-  setTimeout(() => { thanksModal.style.display = "none"; }, 300);
-}
-
-/* FORM SUBMISSION */
-document.getElementById("popupForm").addEventListener("submit", function(e){
-  e.preventDefault(); // prevent reload
-  const form = e.target;
-  fetch("https://formsubmit.co/lskyehya777@gmail.com", {
-    method:"POST",
-    body: new FormData(form)
-  }).then(response => {
-    if(response.ok){ showThanks(); form.reset(); closeForm(); } 
-    else { alert("Error submitting form. Try again."); }
-  }).catch(()=>{ alert("Error submitting form. Try again."); });
-});
-<!-- REQUEST FORM MODAL -->
-<div id="formModal" class="modal">
-  <div class="modal-content">
-    <h2>Request an Edit</h2>
-    <p>Fill the form below and tell us what kind of football edit you want.</p>
-    <form id="popupForm">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <textarea name="message" rows="5" placeholder="Describe the edit you want (player, style, duration, platform)" required></textarea>
-      <button type="submit">Submit Request</button>
-    </form>
-    <button onclick="closeForm()" style="margin-top:10px; background:#ccc; color:#000;">Cancel</button>
-  </div>
-</div>
-
-<!-- THANK YOU MODAL -->
-<div id="thanksModal" class="modal">
-  <div class="modal-content">
-    <h2>Thank You!</h2>
-    <p>Your request has been submitted successfully.<br>We will get back to you soon.</p>
-    <button onclick="closeThanks()" style="margin-top:10px; background:#ff0000; color:#fff;">Close</button>
-  </div>
-</div>
 </script>
 
 </body>
